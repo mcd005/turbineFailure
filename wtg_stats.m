@@ -11,7 +11,7 @@ await_binChoice = 1;
 %Plot scatter graphs of all 5000 samples
 %Bin data into 1 m/s wide intervals and plot against means from each bin
 while (await_scatterChoice == 1)
-scatterChoice = input('\nDo you a plot of the Power Curves? ', 's');
+scatterChoice = input('\nDo you want a plot of the Power Curves? ', 's');
 if isequal(scatterChoice,'Yes') ||  isequal(scatterChoice,'yes')
     plotScatter(u_A, P_A, u_B, P_B);
     await_scatterChoice = 0;
@@ -23,7 +23,7 @@ end
 end
 
 while (await_binChoice == 1)
-binChoice = input('\nDo you a plot of the Power Curves based on binned data? ', 's');
+binChoice = input('\nDo you want a plot of the Power Curves based on binned data? ', 's');
 if isequal(binChoice,'Yes') ||  isequal(binChoice,'yes')
     [mean_windA, mean_windB, mean_energyA, mean_energyB, conf_int_upperA, conf_int_lowerA, conf_int_upperB, conf_int_lowerB] = binData(u_A, P_A, u_B, P_B);
     plotBins(mean_windA, mean_windB, mean_energyA, mean_energyB, conf_int_upperA, conf_int_lowerA, conf_int_upperB, conf_int_lowerB);
